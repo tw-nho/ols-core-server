@@ -27,3 +27,8 @@ nohup.out
 /dist/
 /nbdist/
 /.nb-gradle/
+
+caches/
+daemon/
+native/
+wrapper/
