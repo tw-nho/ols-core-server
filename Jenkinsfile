@@ -1,25 +1,19 @@
 pipeline {
     agent any
-
     stages {
-        stage('ENVs') {
+        stage('Run Test') {
             steps {
-                sh 'env'
-            }
-        }
-        stage('Test') {
-            steps {
-                sh 'scripts/test.sh'
+                sh 'delivery/test.sh'
             }
         }
         stage('Build') {
             steps {
-                sh 'scripts/build.sh'
+                sh 'delivery/build.sh'
             }
         }
         stage('Deploy') {
             steps {
-                sh 'scripts/deploy.sh'
+                sh 'delivery/deploy.sh 5000'
             }
         }
     }
